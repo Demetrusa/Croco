@@ -24,7 +24,8 @@ a:hover {
 
 body {
   margin-top: 0;
-  overflow: hidden;
+  /* overflow: hidden; */
+  padding-left: 72px;
 }
 
 h1 {
