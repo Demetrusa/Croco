@@ -1,0 +1,24 @@
+@import "../../assets/styles/common.scss";
+
+.lang-Box {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 132px;
+}
+.img-bg {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  width: 32px;
+  height: 32px;
+  background: #001e28;
+  border: 1px solid #093948;
+  border-radius: 100px;
+  cursor: pointer;
+  opacity: 0.4;
+
+  &.active {
+    opacity: 1;
+  }
+}

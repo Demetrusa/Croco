@@ -1,1 +1,22 @@
-@import "common.scss";
+@import "../../assets/styles/common.scss";
+
+.footer {
+  width: 100%;
+  background: #001e28;
+  padding-top: 16px;
+
+  &__header {
+    background: #072c38;
+    padding: 8px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &-leftBox {
+      img {
+        height: 20px;
+        margin-right: 16px;
+      }
+    }
+  }
+}
