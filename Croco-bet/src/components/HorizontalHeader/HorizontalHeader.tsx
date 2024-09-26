@@ -14,7 +14,13 @@ import PromoImg7 from "./hHeader-img/promo-img-7.webp";
 import PromoImg8 from "./hHeader-img/promo-img-8.png";
 import RegBtn from "../regBtn/RegBtn";
 
-const HorizontalHeader: React.FC = () => {
+interface HorizontalHeaderProps {
+  onRegBtnClick: () => void; // Define the prop type
+}
+
+const HorizontalHeader: React.FC<HorizontalHeaderProps> = ({
+  onRegBtnClick,
+}) => {
   return (
     <div className="horizontal-header">
       <div className="horizontal-header__swiper">
@@ -73,7 +79,7 @@ const HorizontalHeader: React.FC = () => {
         <div className="swiper-button-next"></div>
         <div className="swiper-button-prev"></div>
       </div>
-      <RegBtn />
+      <RegBtn onClick={onRegBtnClick} /> {/* Pass the onRegBtnClick prop */}
       <p>aloha</p>
     </div>
   );

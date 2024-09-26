@@ -1,17 +1,42 @@
 /* Container for the form */
 .regForm {
-  max-width: 660px;
-  margin: 0 auto;
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  margin-left: 150px;
+  padding-top: 20px;
+}
+.regForm h2 {
+  margin: 0;
+  color: #ffff;
+  font-size: 18px;
+  font-weight: 400;
+}
+.regForm h3 {
+  margin: 0;
+  margin-top: 10px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #ffff;
 }
 .form-container {
-  max-width: 600px;
+  width: 100%;
   margin: 0 auto;
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 8px;
   background-color: #f9f9f9;
 }
-
+.regForm form {
+  width: 95%;
+}
+.regForm form div {
+  width: 95%;
+}
+.regForm form .birth-Form {
+  width: 99%;
+}
 /* Header styles */
 h2 {
   text-align: center;
@@ -20,27 +45,51 @@ h2 {
 
 /* Error message styles */
 .error-message {
-  color: red;
+  color: green;
   margin-bottom: 20px;
 }
 
 /* Input and label styles */
 label {
   display: block;
-  margin-bottom: 5px;
   font-weight: bold;
+  margin-top: 10px;
+  width: 95%;
 }
 
 input[type="text"],
 input[type="email"],
 input[type="tel"],
 input[type="password"],
-select {
-  width: 100%;
+select,
+.Pass-portN {
+  width: 95%;
   padding: 8px;
-  margin-bottom: 15px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  border: none;
+  border-radius: 25px;
+  background-color: #072c38;
+}
+.birth-Form {
+  width: 100%;
+  /* margin: 0 auto; */
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.birth-Form select {
+  width: 33%;
+}
+.regForm select {
+  color: #ffffff;
+}
+.regForm .country-input {
+  width: 93%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.regForm .country-input div {
+  width: 47%;
 }
 
 /* Password requirements styles */
@@ -62,16 +111,17 @@ select {
 /* Button styles */
 button {
   padding: 10px 15px;
-  background-color: #007bff;
+  background-color: #15ff00;
   color: white;
   border: none;
   border-radius: 4px;
   cursor: pointer;
   width: 100%;
+  margin-top: 20px;
 }
 
 button:disabled {
-  background-color: #ccc;
+  background-color: #0e5f07;
   cursor: not-allowed;
 }
 
@@ -82,4 +132,50 @@ button:disabled {
 
 .password-requirements p.invalid {
   color: red;
+}
+.req-P {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+  margin-left: 16px;
+  font-size: 12px;
+}
+.requimentsPASS {
+  margin-top: 10px;
+}
+.req-P::before {
+  content: "";
+  display: block;
+  width: 12px;
+  height: 12px;
+  left: -15px;
+  border-radius: 50%;
+  background-color: currentColor;
+  position: absolute;
+}
+
+.req-P-green::before {
+  background-color: green;
+}
+.regForm .form-checkboxes {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+.regForm .form-checkboxes label {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  margin: 10px 0 0 0;
+}
+.regForm .form-checkboxes p {
+  font-size: 13px;
+  margin: 0;
+  color: #ffffff;
+  font-weight: 500;
+}
+.regForm .form-checkboxes p a {
+  color: #27b654;
 }
