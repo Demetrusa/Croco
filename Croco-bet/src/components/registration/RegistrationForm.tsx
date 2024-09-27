@@ -105,266 +105,268 @@ const RegistrationForm: React.FC = () => {
   };
 
   return (
-    <div className="regForm">
-      <h2>Registration Form</h2>
-      <h3>პირადი ინფომაცია</h3>
-      {error && <p style={{ color: "black" }}>{error}</p>}
-      <form onSubmit={handleSubmit}>
-        {/* User Info */}
-        <div>
-          <label htmlFor="username"></label>
-          <input
-            type="text"
-            id="username"
-            placeholder="Username"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-            required
-          />
-        </div>
-        <div>
-          <label htmlFor="userSurname"></label>
-          <input
-            type="text"
-            id="userSurname"
-            value={userSurname}
-            placeholder="Surname"
-            onChange={(e) => setUserSurname(e.target.value)}
-            required
-          />
-        </div>
-
-        {/* Phone Numbers */}
-        <div>
-          <label htmlFor="georgianPhone"></label>
-          <input
-            type="tel"
-            id="georgianPhone"
-            value={georgianPhone}
-            placeholder="Georgian Phone Number (+995)"
-            onChange={(e) => setGeorgianPhone(e.target.value)}
-            required
-          />
-        </div>
-        <div>
-          <label htmlFor="personalNumber"></label>
-          <input
-            className="Pass-portN"
-            type="number"
-            id="personalNumber"
-            value={personalPhone}
-            placeholder="Personal Number (Passport)"
-            inputMode="numeric"
-            onChange={(e) => personalNumber(e.target.value)}
-            required
-          />
-        </div>
-
-        {/* Country and Citizenship */}
-        <div className="country-input">
+    <div className="registrationPage">
+      <div className="regForm">
+        <h2>Registration Form</h2>
+        <h3>პირადი ინფომაცია</h3>
+        {error && <p style={{ color: "black" }}>{error}</p>}
+        <form onSubmit={handleSubmit}>
+          {/* User Info */}
           <div>
-            <label htmlFor="country"></label>
-            <select
-              id="country"
-              value={country}
-              onChange={(e) => setCountry(e.target.value)}
+            <label htmlFor="username"></label>
+            <input
+              type="text"
+              id="username"
+              placeholder="Username"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
               required
-            >
-              <option value="">Select Country</option>
-              {countries.map((country) => (
-                <option key={country} value={country}>
-                  {country}
-                </option>
-              ))}
-            </select>
+            />
           </div>
           <div>
-            <label htmlFor="citizenship"></label>
-            <select
-              id="citizenship"
-              value={citizenship}
-              onChange={(e) => setCitizenship(e.target.value)}
+            <label htmlFor="userSurname"></label>
+            <input
+              type="text"
+              id="userSurname"
+              value={userSurname}
+              placeholder="Surname"
+              onChange={(e) => setUserSurname(e.target.value)}
               required
-            >
-              <option value="">Select Citizenship</option>
-              {countries.map((country) => (
-                <option key={country} value={country}>
-                  {country}
-                </option>
-              ))}
-            </select>
+            />
           </div>
-        </div>
 
-        {/* Date of Birth */}
-        <div>
-          <label></label>
-          <div className="birth-Form">
-            <select
-              value={birthDate.day}
-              onChange={(e) =>
-                setBirthDate({ ...birthDate, day: e.target.value })
-              }
+          {/* Phone Numbers */}
+          <div>
+            <label htmlFor="georgianPhone"></label>
+            <input
+              type="tel"
+              id="georgianPhone"
+              value={georgianPhone}
+              placeholder="Georgian Phone Number (+995)"
+              onChange={(e) => setGeorgianPhone(e.target.value)}
               required
-            >
-              <option value="">Day</option>
-              {[...Array(31)].map((_, i) => (
-                <option key={i} value={i + 1}>
-                  {i + 1}
-                </option>
-              ))}
-            </select>
-            <select
-              value={birthDate.month}
-              onChange={(e) =>
-                setBirthDate({ ...birthDate, month: e.target.value })
-              }
+            />
+          </div>
+          <div>
+            <label htmlFor="personalNumber"></label>
+            <input
+              className="Pass-portN"
+              type="number"
+              id="personalNumber"
+              value={personalPhone}
+              placeholder="Personal Number (Passport)"
+              inputMode="numeric"
+              onChange={(e) => personalNumber(e.target.value)}
               required
-            >
-              <option value="">Month</option>
-              {[...Array(12)].map((_, i) => (
-                <option key={i} value={i + 1}>
-                  {i + 1}
-                </option>
-              ))}
-            </select>
-            <select
-              value={birthDate.year}
-              onChange={(e) =>
-                setBirthDate({ ...birthDate, year: e.target.value })
-              }
-              required
-            >
-              <option value="">Year</option>
-              {[...Array(100)].map((_, i) => {
-                const year = new Date().getFullYear() - i;
-                return (
-                  <option key={i} value={year}>
-                    {year}
+            />
+          </div>
+
+          {/* Country and Citizenship */}
+          <div className="country-input">
+            <div>
+              <label htmlFor="country"></label>
+              <select
+                id="country"
+                value={country}
+                onChange={(e) => setCountry(e.target.value)}
+                required
+              >
+                <option value="">Select Country</option>
+                {countries.map((country) => (
+                  <option key={country} value={country}>
+                    {country}
                   </option>
-                );
-              })}
-            </select>
+                ))}
+              </select>
+            </div>
+            <div>
+              <label htmlFor="citizenship"></label>
+              <select
+                id="citizenship"
+                value={citizenship}
+                onChange={(e) => setCitizenship(e.target.value)}
+                required
+              >
+                <option value="">Select Citizenship</option>
+                {countries.map((country) => (
+                  <option key={country} value={country}>
+                    {country}
+                  </option>
+                ))}
+              </select>
+            </div>
           </div>
-        </div>
 
-        {/* Account Details */}
-        <div>
-          <label htmlFor="password"></label>
-          <input
-            type="password"
-            id="password"
-            value={password}
-            placeholder="Password"
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-        </div>
-        <div>
-          <label htmlFor="confirmPassword"></label>
-          <input
-            type="password"
-            id="confirmPassword"
-            value={confirmPassword}
-            placeholder="Confirm Password"
-            onChange={(e) => setConfirmPassword(e.target.value)}
-            required
-          />
-        </div>
-        {/* {email requiments} */}
-
-        <div>
-          <label htmlFor="email"></label>
-          <input
-            type="email"
-            id="email"
-            value={email}
-            placeholder="Email"
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-        </div>
-
-        {/* Password Requirements */}
-        <div className="requimentsPASS">
-          <p
-            style={{ color: passwordRequirements.length ? "green" : "gray" }}
-            className="req-P"
-          >
-            6-20 symbols
-          </p>
-          <p
-            className="req-P"
-            style={{
-              color: passwordRequirements.upperLower ? "green" : "gray",
-            }}
-          >
-            Upper and lower-case letters (for example: Aa)
-          </p>
-          <p
-            className="req-P"
-            style={{ color: passwordRequirements.digit ? "green" : "gray" }}
-          >
-            Digit or number (for example: 1 or 123)
-          </p>
-          <p
-            className="req-P"
-            style={{
-              color: passwordRequirements.notMatchUsername ? "green" : "gray",
-            }}
-          >
-            The password must not match the username
-          </p>
-        </div>
-
-        {/* Consent Checkboxes */}
-        <div className="form-checkboxes">
+          {/* Date of Birth */}
           <div>
-            <label>
-              <input
-                type="checkbox"
-                checked={consentDataProcessing}
-                onChange={() =>
-                  setConsentDataProcessing(!consentDataProcessing)
+            <label></label>
+            <div className="birth-Form">
+              <select
+                value={birthDate.day}
+                onChange={(e) =>
+                  setBirthDate({ ...birthDate, day: e.target.value })
                 }
-              />
-              <p>
-                I CONSENT TO THE PROCESSING OF MY PERSONAL DATA FOR DIRECT
-                MARKETING PURPOSES (CONSENT CAN BE WITHDRAWN AT ANY TIME NO SMS:
-                94403)
-              </p>
-            </label>
+                required
+              >
+                <option value="">Day</option>
+                {[...Array(31)].map((_, i) => (
+                  <option key={i} value={i + 1}>
+                    {i + 1}
+                  </option>
+                ))}
+              </select>
+              <select
+                value={birthDate.month}
+                onChange={(e) =>
+                  setBirthDate({ ...birthDate, month: e.target.value })
+                }
+                required
+              >
+                <option value="">Month</option>
+                {[...Array(12)].map((_, i) => (
+                  <option key={i} value={i + 1}>
+                    {i + 1}
+                  </option>
+                ))}
+              </select>
+              <select
+                value={birthDate.year}
+                onChange={(e) =>
+                  setBirthDate({ ...birthDate, year: e.target.value })
+                }
+                required
+              >
+                <option value="">Year</option>
+                {[...Array(100)].map((_, i) => {
+                  const year = new Date().getFullYear() - i;
+                  return (
+                    <option key={i} value={year}>
+                      {year}
+                    </option>
+                  );
+                })}
+              </select>
+            </div>
           </div>
-          <div>
-            <label>
-              <input
-                type="checkbox"
-                checked={certifiedAge}
-                onChange={() => setCertifiedAge(!certifiedAge)}
-              />
-              <p>I certify that I am 25 years of age or older</p>
-            </label>
-          </div>
-          <div>
-            <label>
-              <input
-                type="checkbox"
-                checked={termsAccepted}
-                onChange={() => setTermsAccepted(!termsAccepted)}
-              />
-              <p>
-                By creating a user you confirm that you have read and agree to
-                our
-                <a href="#">Terms and Conditions</a>.
-              </p>
-            </label>
-          </div>
-        </div>
 
-        <button type="submit" disabled={!allRequirementsMet}>
-          Register
-        </button>
-      </form>
+          {/* Account Details */}
+          <div>
+            <label htmlFor="password"></label>
+            <input
+              type="password"
+              id="password"
+              value={password}
+              placeholder="Password"
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+          </div>
+          <div>
+            <label htmlFor="confirmPassword"></label>
+            <input
+              type="password"
+              id="confirmPassword"
+              value={confirmPassword}
+              placeholder="Confirm Password"
+              onChange={(e) => setConfirmPassword(e.target.value)}
+              required
+            />
+          </div>
+          {/* {email requiments} */}
+
+          <div>
+            <label htmlFor="email"></label>
+            <input
+              type="email"
+              id="email"
+              value={email}
+              placeholder="Email"
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+          </div>
+
+          {/* Password Requirements */}
+          <div className="requimentsPASS">
+            <p
+              style={{ color: passwordRequirements.length ? "green" : "gray" }}
+              className="req-P"
+            >
+              6-20 symbols
+            </p>
+            <p
+              className="req-P"
+              style={{
+                color: passwordRequirements.upperLower ? "green" : "gray",
+              }}
+            >
+              Upper and lower-case letters (for example: Aa)
+            </p>
+            <p
+              className="req-P"
+              style={{ color: passwordRequirements.digit ? "green" : "gray" }}
+            >
+              Digit or number (for example: 1 or 123)
+            </p>
+            <p
+              className="req-P"
+              style={{
+                color: passwordRequirements.notMatchUsername ? "green" : "gray",
+              }}
+            >
+              The password must not match the username
+            </p>
+          </div>
+
+          {/* Consent Checkboxes */}
+          <div className="form-checkboxes">
+            <div>
+              <label>
+                <input
+                  type="checkbox"
+                  checked={consentDataProcessing}
+                  onChange={() =>
+                    setConsentDataProcessing(!consentDataProcessing)
+                  }
+                />
+                <p>
+                  I CONSENT TO THE PROCESSING OF MY PERSONAL DATA FOR DIRECT
+                  MARKETING PURPOSES (CONSENT CAN BE WITHDRAWN AT ANY TIME NO
+                  SMS: 94403)
+                </p>
+              </label>
+            </div>
+            <div>
+              <label>
+                <input
+                  type="checkbox"
+                  checked={certifiedAge}
+                  onChange={() => setCertifiedAge(!certifiedAge)}
+                />
+                <p>I certify that I am 25 years of age or older</p>
+              </label>
+            </div>
+            <div>
+              <label>
+                <input
+                  type="checkbox"
+                  checked={termsAccepted}
+                  onChange={() => setTermsAccepted(!termsAccepted)}
+                />
+                <p>
+                  By creating a user you confirm that you have read and agree to
+                  our
+                  <a href="#">Terms and Conditions</a>.
+                </p>
+              </label>
+            </div>
+          </div>
+
+          <button type="submit" disabled={!allRequirementsMet}>
+            Register
+          </button>
+        </form>
+      </div>
     </div>
   );
 };

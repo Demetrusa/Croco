@@ -179,3 +179,8 @@ button:disabled {
 .regForm .form-checkboxes p a {
   color: #27b654;
 }
+.registrationPage {
+  width: 100%;
+  /* min-height: calc(100vh - 64px); */
+  background: #00141e;
+}

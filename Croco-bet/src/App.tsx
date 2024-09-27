@@ -4,7 +4,6 @@ import HorizontalHeader from "./components/HorizontalHeader/HorizontalHeader";
 import VerticalHeader from "./components/VerticalHeader/VerticalHeader";
 import RegistrationForm from "./components/registration/RegistrationForm";
 import Footer from "./components/footer/Footer";
-
 const App: React.FC = () => {
   // State to manage the visibility of RegistrationForm
   const [showForm, setShowForm] = useState(false);
@@ -18,10 +17,8 @@ const App: React.FC = () => {
     <div>
       <VerticalHeader />
       <div className="main-content">
-        <HorizontalHeader onRegBtnClick={handleShowForm} />{" "}
-        <div className="registrationPage">
-          {showForm && <RegistrationForm />}
-        </div>
+        <HorizontalHeader onRegBtnClick={handleShowForm} />
+        {showForm && <RegistrationForm />}
         <p>Main content area</p>
       </div>
       <Footer />

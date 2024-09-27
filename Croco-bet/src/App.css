@@ -41,8 +41,3 @@
   /* margin-left: 71px; */
   width: 100%;
 }
-.registrationPage {
-  width: 100%;
-  min-height: calc(100vh - 64px);
-  background: #00141e;
-}

@@ -22,3 +22,25 @@
     opacity: 1;
   }
 }
+.footer__mainContent {
+  background: #00141e;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15px;
+}
+.footer__mainContent-leftBox {
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+}
+.footer__mainContent-leftBox .leftBoxes {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+.footer__mainContent-leftBox .leftBoxes h2 {
+  font-size: 14px;
+  color: #ffffff;
+}
